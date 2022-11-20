@@ -9,7 +9,7 @@ This isn't exactly intended to be cloned and ran in your own enviornment, this i
 - Allows servers that miss a credential cycle, to be reprovisioned by the credential shuffle tool, to the new secret.
 - Allows you to add a archived secret on-demand, in the event a server has a secret in-use that is not known to the software.
 - Reduces the risk of malpractice with credentials, as end users *shouldn't* have access to secrets. Only applications.
-- Automatically removes old secrets
+- Automatically removes secrets past a certain age
 - Allows you to cycle *ALL* secrets in one Python script (optional - the "universal" Python files...)
 - Have a really awful password you used multiple places? Add it to all archives in one Python script... (optional - the "universal" Python files...)
 
