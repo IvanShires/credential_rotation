@@ -10,6 +10,8 @@ This isn't exactly intended to be cloned and ran in your own enviornment, this i
 - Allows you to add a archived secret on-demand, in the event a server has a secret installed that is not known to the software.
 - Reduces the risk of malpractice with credentials, as end users *shouldn't* have access to secrets. Only applications.
 
+## How-To
+
 #### ~/.aws/credentials file:
 
     ivans-Mac-mini:~ ivan$ cat ~/.aws/credentials 
@@ -25,6 +27,8 @@ This isn't exactly intended to be cloned and ran in your own enviornment, this i
     export secret_name={{ redacted }}
     export secret_proxmox_default=root
     ivans-Mac-mini:~ ivan$ 
+
+## Misc
 
 Forgive me, this is my first time using the AWS API, so best practices were used to the best of my abilities here..
 
