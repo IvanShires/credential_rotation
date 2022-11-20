@@ -5,6 +5,11 @@ There is one small problem though - not all services you need to rotate will be 
 
 This isn't exactly intended to be cloned and ran in your own enviornment, this is a proof of concept.. You can, but some assembly required... namely in the following env vars:
 
+## Features
+- Allows servers that miss a credential cycle, to be reprovisioned by the credential shuffle tool, to the new secret.
+- Allows you to add a archived secret on-demand, in the event a server has a secret installed that is not known to the software.
+- Reduces the risk of malpractice with credentials, as end users *shouldn't* have access to secrets. Only applications.
+
 #### ~/.aws/credentials file:
 
     ivans-Mac-mini:~ ivan$ cat ~/.aws/credentials 
