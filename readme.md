@@ -54,6 +54,11 @@ Although this does work, shuffling host secrets in a simple little python script
 
 To keep AWS costs "down" (10,000 API queries = $0.04, so if you had 100,000 hosts, 3-4 queries each.. each rotation will cost money.. So cacheing credentials for the workers, would be hugely beneficial. Almost so, that you could just spin up their containers, with an ENV var for the credentials they need to shuffle.
 
+Caching Credentials Cost Saving Ideas:
+- Credential Cycle Worker Nodes query a Redis instance for credentials.. Redis instance, saves data for 5 minutes, upon which it'll re-query AWS.. keeping query costs down..
+- Credential Cycle Worker Nodes get a copy of the secrets in their deployment file, but the problem with that is you need to destroy their deployment and redeploy for each cycle. Not impossible, but not ideal.
+
+
 ## How-To
 
 #### ~/.aws/credentials file:
