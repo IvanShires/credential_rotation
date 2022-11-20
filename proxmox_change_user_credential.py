@@ -33,7 +33,7 @@ secrets_list.append(current_production_secret)
 while login_loop:
     try:
         secret_value = secrets_list.pop()
-        print("Trying with credential:",secret_value)
+        print("Trying with credential...")
         proxmox = ProxmoxAPI(
             proxmox_host, user=proxmox_user, password=secret_value, verify_ssl=False
         )
