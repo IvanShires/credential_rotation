@@ -49,6 +49,11 @@ Changing User Credential on a Service (in this case, Proxmox)
     Credential successfully rotated..
     ivans-Mac-mini:aws-secrets-mgr-learning ivan$ 
 
+## TLDR
+Although this does work, shuffling host secrets in a simple little python script is *incredibly* inefficient as your scale goes up.. Having a little cluster of "password shuffler workers", for each service.. would be so much more handy.. So select hosts where service like "%MSSQL%" and put all of those hosts in a RabbitMQ queue for rotation... Then the worker bees can pick it up and get to work reshuffling based on the credential.
+
+To keep AWS costs "down" (10,000 API queries = $0.04, so if you had 100,000 hosts, 3-4 queries each.. each rotation will cost money.. So cacheing credentials for the workers, would be hugely beneficial. Almost so, that you could just spin up their containers, with an ENV var for the credentials they need to shuffle.
+
 ## How-To
 
 #### ~/.aws/credentials file:
